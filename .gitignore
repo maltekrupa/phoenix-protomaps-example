@@ -35,3 +35,9 @@ map_select-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignore maps and glyphs
+/priv/static/map/
+/priv/static/glyphs/
+
+# Ignore vendored assets
+/assets/vendor/node_modules
