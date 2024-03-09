@@ -2,6 +2,7 @@
 
 To start your Phoenix server:
 
+  * Run `npm install` in `assets/vendor`
   * Run `mix setup` to install and setup dependencies
   * Follow the steps in `Download map data` to service your maps and fonts locally
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
