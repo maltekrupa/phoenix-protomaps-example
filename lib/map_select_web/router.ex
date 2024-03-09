@@ -17,7 +17,7 @@ defmodule MapSelectWeb.Router do
   scope "/", MapSelectWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", Leaflet
   end
 
   # Other scopes may use custom stacks.

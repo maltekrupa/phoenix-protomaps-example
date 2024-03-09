@@ -22,8 +22,44 @@ import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"
 import topbar from "../vendor/topbar"
 
+// Custom imports
+import * as maplibregl from '../vendor/node_modules/maplibre-gl';
+import {Protocol, PMTiles} from '../vendor/node_modules/pmtiles';
+import layers from '../vendor/node_modules/protomaps-themes-base';
+
+// Hooks
+const Map = {
+  mounted() {
+    let protocol = new Protocol();
+    maplibregl.addProtocol("pmtiles", protocol.tile);
+    const myMap = new maplibregl.Map({
+      container: "map",
+      center: [8.682127, 50.110924],
+      zoom: 13,
+      style: {
+        version: 8,
+        glyphs: "http://localhost:4000/glyphs/{fontstack}/{range}.pbf",
+        sources: {
+          protomaps: {
+            type: "vector",
+            url: 'pmtiles://http://localhost:4000/map/germany.pmtiles',
+            attribution:
+              '<a href="https://protomaps.com">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>',
+          },
+        },
+        layers: layers("protomaps", "dark"),
+      },
+    });
+  },
+};
+
+const Hooks = {
+  Map,
+};
+
+// End of custom
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
-let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
+let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}, hooks: Hooks })
 
 // Show progress bar on live navigation and form submits
 topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})
@@ -38,4 +74,3 @@ liveSocket.connect()
 // >> liveSocket.enableLatencySim(1000)  // enabled for duration of browser session
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
-
