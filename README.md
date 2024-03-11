@@ -9,6 +9,8 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+[![Screenshot of application running in firefox](https://img.youtube.com/vi/AnjkZntIxW0/0.jpg)](https://youtu.be/AnjkZntIxW0)
+
 # Download map data
 
 This example uses Frankfurt/Germany to not confuse you with generic names.
