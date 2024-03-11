@@ -21,7 +21,7 @@ Install pmtiles
 brew install pmtiles
 ```
 
-Draw an area on [http://bboxfinder.com/](bboxfinder.com) and copy the
+Draw an area on [bboxfinder.com](http://bboxfinder.com) and copy the
 coordinates from the bottom of the page in the `Box` field.
 
 Download data via pmtiles by supplying the previously copied coordinates:
@@ -31,7 +31,7 @@ pmtiles extract https://build.protomaps.com/20240309.pmtiles frankfurt.pmtiles -
 
 ```
 
-Check [https://maps.protomaps.com/builds/](protomaps build page) for the latest pmtiles source file.
+Check [protomaps build page](https://maps.protomaps.com/builds/) for the latest pmtiles source file.
 
 This gives you a file called `frankfurt.pmtiles` containing everything you need.
 
