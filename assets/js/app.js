@@ -50,6 +50,25 @@ const Map = {
         layers: layers('protomaps', 'dark'),
       },
     });
+    map.once('load', () => {
+      map.addSource('streets', {
+        type: 'geojson',
+        data: '/map/frankfurt.geojson.small',
+      });
+      map.addLayer({
+        id: 'steet-lines',
+        type: 'line',
+        source: 'streets',
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#888',
+          'line-width': 1
+        }
+      });
+    });
   },
 };
 
