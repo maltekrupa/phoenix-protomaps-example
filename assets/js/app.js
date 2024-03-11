@@ -32,22 +32,22 @@ const Map = {
   mounted() {
     let protocol = new Protocol();
     maplibregl.addProtocol("pmtiles", protocol.tile);
-    const myMap = new maplibregl.Map({
-      container: "map",
+    const map = new maplibregl.Map({
+      container: 'map',
       center: [8.682127, 50.110924],
       zoom: 13,
       style: {
         version: 8,
-        glyphs: "http://localhost:4000/glyphs/{fontstack}/{range}.pbf",
+        glyphs: '/glyphs/{fontstack}/{range}.pbf',
         sources: {
           protomaps: {
-            type: "vector",
-            url: 'pmtiles://http://localhost:4000/map/germany.pmtiles',
+            type: 'vector',
+            url: 'pmtiles:///map/frankfurt.pmtiles',
             attribution:
               '<a href="https://protomaps.com">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>',
           },
         },
-        layers: layers("protomaps", "dark"),
+        layers: layers('protomaps', 'dark'),
       },
     });
   },
