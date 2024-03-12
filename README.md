@@ -9,7 +9,7 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-[![Screenshot of application running in firefox](https://img.youtube.com/vi/AnjkZntIxW0/0.jpg)](https://youtu.be/AnjkZntIxW0)
+Short video: [![Screenshot of application running in firefox](https://img.youtube.com/vi/AnjkZntIxW0/0.jpg)](https://youtu.be/AnjkZntIxW0)
 
 # Download map data
 
@@ -70,3 +70,21 @@ jq -c . < frankfurt.geojson > frankfurt.geojson.mini
 ```
 
 Move this file to `priv/static/map` and you're done.
+
+# What has been done
+
+Not a lot as been done to make this work. Let's walk through it together:
+
+A new project was created via
+
+```
+mix phx.new map_select --no-ecto --no-mailer
+```
+
+Then I added:
+
+- a [new live route](https://github.com/maltekrupa/phoenix-protomaps-example/blob/main/lib/map_select_web/router.ex#L20)
+- a [small module](https://github.com/maltekrupa/phoenix-protomaps-example/blob/main/lib/map_select_web/live/live_map.ex) to serve some basic HTML for the map
+- a [JavaScript hook](https://github.com/maltekrupa/phoenix-protomaps-example/blob/main/assets/js/app.js#L25-L77) to load the map and add an additional layer with some GeoJSON
+
+That's it.
