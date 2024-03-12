@@ -4,7 +4,7 @@ To start your Phoenix server:
 
   * Run `npm install` in `assets/vendor`
   * Run `mix setup` to install and setup dependencies
-  * Follow the steps in `Download map data` to service your maps and fonts locally
+  * Follow the steps in `Download map data` to serve maps and fonts locally
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
@@ -26,7 +26,7 @@ brew install pmtiles
 Draw an area on [bboxfinder.com](http://bboxfinder.com) and copy the
 coordinates from the bottom of the page in the `Box` field.
 
-Download data via pmtiles by supplying the previously copied coordinates:
+Download data via `pmtiles` by supplying the previously copied coordinates:
 
 ```shell
 pmtiles extract https://build.protomaps.com/20240309.pmtiles frankfurt.pmtiles --bbox=8.618774,50.076973,8.755074,50.148636
@@ -35,7 +35,7 @@ pmtiles extract https://build.protomaps.com/20240309.pmtiles frankfurt.pmtiles -
 
 Check [protomaps build page](https://maps.protomaps.com/builds/) for the latest pmtiles source file.
 
-This gives you a file called `frankfurt.pmtiles` containing everything you need.
+This creates a file called `frankfurt.pmtiles` containing everything you need.
 
 Move the `map.pmtiles` to `priv/static/map`
 
