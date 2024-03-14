@@ -86,5 +86,6 @@ Then I added:
 - a [new live route](https://github.com/maltekrupa/phoenix-protomaps-example/blob/main/lib/map_select_web/router.ex#L20)
 - a [small module](https://github.com/maltekrupa/phoenix-protomaps-example/blob/main/lib/map_select_web/live/live_map.ex) to serve some basic HTML for the map
 - a [JavaScript hook](https://github.com/maltekrupa/phoenix-protomaps-example/blob/main/assets/js/app.js#L25-L77) to load the map and add an additional layer with some GeoJSON
+- [`map` and `glyphs` to `static_paths/0`](https://github.com/maltekrupa/phoenix-protomaps-example/blob/main/lib/map_select_web.ex#L20)
 
 That's it.
